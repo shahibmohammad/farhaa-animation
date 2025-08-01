@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tumiii Ekta Pagool</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+      font-family: 'Segoe UI', cursive;
+      overflow: hidden;
+    }
+
+    #text {
+      font-size: 48px;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 2px 2px 10px #000;
+      opacity: 0;
+      animation: fadeInOut 1s ease-in-out infinite;
+    }
+
+    @keyframes fadeInOut {
+      0% { opacity: 0; transform: scale(0.8); }
+      10% { opacity: 1; transform: scale(1); }
+      90% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0; transform: scale(1.2); }
+    }
+  </style>
+</head>
+<body>
+
+<div id="text">TUMIII EKTAAA PAGOOOLLLLL 🤭</div>
+
+<script>
+  const phrases = [
+    "TUMIII EKTA",
+
+   "PAGOOOLLLLL",
+    "🤭",
+    "🌸",
+  ];
+
+  const textEl = document.getElementById("text");
+  let index = 0;
+
+  function showNextPhrase() {
+    textEl.style.animation = "none";
+    void textEl.offsetWidth;
+    textEl.style.animation = "fadeInOut 1s ease-in-out infinite";
+    textEl.textContent = phrases[index];
+    index = (index + 1) % phrases.length;
+  }
+
+  showNextPhrase();
+  setInterval(showNextPhrase, 1000);
+</script>
+
+</body>
+</html>
